@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dle-fur <dle-fur@student.42.fr>            +#+  +:+       +#+        */
+/*   By: david <david@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:05:29 by david             #+#    #+#             */
-/*   Updated: 2025/05/29 10:48:50 by dle-fur          ###   ########.fr       */
+/*   Updated: 2025/05/30 13:28:10 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,92 +31,68 @@ int	is_wall(t_game *game, double x, double y)
 
 void	move_forward(t_game *game)
 {
-	double	x;
-	double	y;
 	double	new_x;
 	double	new_y;
 	double	check_x;
 	double	check_y;
 
-	x = game->player.pos_x;
-	y = game->player.pos_y;
-	new_x = x + game->player.dir_x * MOVE_SPEED;
-	new_y = y + game->player.dir_y * MOVE_SPEED;
+	new_x = game->player.pos_x + game->player.dir_x * MOVE_SPEED;
+	new_y = game->player.pos_y + game->player.dir_y * MOVE_SPEED;
 	check_x = new_x + game->player.dir_x * PLAYER_RADIUS;
-	if (is_wall(game, check_x, y) == 0)
-		x = new_x;
+	if (is_wall(game, check_x, game->player.pos_y) == 0)
+		game->player.pos_x = new_x;
 	check_y = new_y + game->player.dir_y * PLAYER_RADIUS;
-	if (is_wall(game, x, check_y) == 0)
-		y = new_y;
-	game->player.pos_x = x;
-	game->player.pos_y = y;
+	if (is_wall(game, game->player.pos_x, check_y) == 0)
+		game->player.pos_y = new_y;
 }
 
 void	move_backward(t_game *game)
 {
-	double	x;
-	double	y;
 	double	new_x;
 	double	new_y;
 	double	check_x;
 	double	check_y;
 
-	x = game->player.pos_x;
-	y = game->player.pos_y;
-	new_x = x - game->player.dir_x * MOVE_SPEED;
-	new_y = y - game->player.dir_y * MOVE_SPEED;
+	new_x = game->player.pos_x - game->player.dir_x * MOVE_SPEED;
+	new_y = game->player.pos_y - game->player.dir_y * MOVE_SPEED;
 	check_x = new_x - game->player.dir_x * PLAYER_RADIUS;
-	if (is_wall(game, check_x, y) == 0)
-		x = new_x;
+	if (is_wall(game, check_x, game->player.pos_y) == 0)
+		game->player.pos_x = new_x;
 	check_y = new_y - game->player.dir_y * PLAYER_RADIUS;
-	if (is_wall(game, x, check_y) == 0)
-		y = new_y;
-	game->player.pos_x = x;
-	game->player.pos_y = y;
+	if (is_wall(game, game->player.pos_x, check_y) == 0)
+		game->player.pos_y = new_y;
 }
 
 void	move_left(t_game *game)
 {
-	double	x;
-	double	y;
 	double	new_x;
 	double	new_y;
 	double	check_x;
 	double	check_y;
 
-	x = game->player.pos_x;
-	y = game->player.pos_y;
-	new_x = x - game->player.plane_x * MOVE_SPEED;
-	new_y = y - game->player.plane_y * MOVE_SPEED;
+	new_x = game->player.pos_x - game->player.plane_x * MOVE_SPEED;
+	new_y = game->player.pos_y - game->player.plane_y * MOVE_SPEED;
 	check_x = new_x - game->player.plane_x * PLAYER_RADIUS;
-	if (is_wall(game, check_x, y) == 0)
-		x = new_x;
+	if (is_wall(game, check_x, game->player.pos_y) == 0)
+		game->player.pos_x = new_x;
 	check_y = new_y - game->player.plane_y * PLAYER_RADIUS;
-	if (is_wall(game, x, check_y) == 0)
-		y = new_y;
-	game->player.pos_x = x;
-	game->player.pos_y = y;
+	if (is_wall(game, game->player.pos_x, check_y) == 0)
+		game->player.pos_y = new_y;
 }
 
 void	move_right(t_game *game)
 {
-	double	x;
-	double	y;
 	double	new_x;
 	double	new_y;
 	double	check_x;
 	double	check_y;
 
-	x = game->player.pos_x;
-	y = game->player.pos_y;
-	new_x = x + game->player.plane_x * MOVE_SPEED;
-	new_y = y + game->player.plane_y * MOVE_SPEED;
+	new_x = game->player.pos_x + game->player.plane_x * MOVE_SPEED;
+	new_y = game->player.pos_y + game->player.plane_y * MOVE_SPEED;
 	check_x = new_x + game->player.plane_x * PLAYER_RADIUS;
-	if (is_wall(game, check_x, y) == 0)
-		x = new_x;
+	if (is_wall(game, check_x, game->player.pos_y) == 0)
+		game->player.pos_x = new_x;
 	check_y = new_y + game->player.plane_y * PLAYER_RADIUS;
-	if (is_wall(game, x, check_y) == 0)
-		y = new_y;
-	game->player.pos_x = x;
-	game->player.pos_y = y;
+	if (is_wall(game, game->player.pos_x, check_y) == 0)
+		game->player.pos_y = new_y;
 }

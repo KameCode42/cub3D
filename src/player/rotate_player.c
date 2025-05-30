@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_player.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dle-fur <dle-fur@student.42.fr>            +#+  +:+       +#+        */
+/*   By: david <david@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 17:09:17 by david             #+#    #+#             */
-/*   Updated: 2025/05/29 13:47:03 by dle-fur          ###   ########.fr       */
+/*   Updated: 2025/05/30 13:18:57 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void	rotate_player_mouse(t_game *game, double angle)
 	double	old_dy;
 	double	old_px;
 	double	old_py;
-
 
 	old_dx = game->player.dir_x;
 	old_dy = game->player.dir_y;
