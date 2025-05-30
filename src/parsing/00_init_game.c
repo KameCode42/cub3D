@@ -6,7 +6,7 @@
 /*   By: david <david@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 05:46:11 by aledos-s          #+#    #+#             */
-/*   Updated: 2025/05/23 18:37:00 by david            ###   ########.fr       */
+/*   Updated: 2025/05/30 11:31:06 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	init_mlx(t_game *game)
 			WIN_WIDTH,
 			WIN_HEIGHT,
 			WIN_TITLE);
+	mlx_mouse_hide(game->mlx, game->win);
 	return (0);
 }
 

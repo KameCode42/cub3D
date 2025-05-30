@@ -3,14 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   mouse_rotate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dle-fur <dle-fur@student.42.fr>            +#+  +:+       +#+        */
+/*   By: david <david@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 09:11:57 by dle-fur           #+#    #+#             */
-/*   Updated: 2025/05/29 13:40:59 by dle-fur          ###   ########.fr       */
+/*   Updated: 2025/05/30 11:47:11 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+void	draw_crosshair(t_game *game)
+{
+	int	cross_x;
+	int	cross_y;
+	int	delta_x;
+
+	cross_x = WIN_WIDTH / 2;
+	cross_y = WIN_HEIGHT / 2;
+	delta_x = -10;
+	while (delta_x <= 10)
+	{
+		pixel_put(game, cross_x + delta_x, cross_y, 0x00FF00);
+		pixel_put(game, cross_x, cross_y + delta_x, 0x00FF00);
+		delta_x++;
+	}
+}
 
 int	mouse_rotate(int x, int y, void *param)
 {

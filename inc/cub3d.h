@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dle-fur <dle-fur@student.42.fr>            +#+  +:+       +#+        */
+/*   By: david <david@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 12:42:57 by aledos-s          #+#    #+#             */
-/*   Updated: 2025/05/29 13:33:33 by dle-fur          ###   ########.fr       */
+/*   Updated: 2025/05/30 11:39:16 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 
 /* ─── Defines ───────────────────────────────────────────────── */
 # define WIN_TITLE "CUB3D"
-# define WIN_WIDTH 2200
-# define WIN_HEIGHT 1080
+# define WIN_WIDTH 2500
+# define WIN_HEIGHT 1200
 # define CELL_WALL '1'
 # define CELL_EMPTY '0'
 # define START_N 'N'
@@ -41,10 +41,10 @@
 # define PI 3.14159265359
 # define FOV 67.0
 # define PLAN_LEN 0.66
-# define MOVE_SPEED 0.08
-# define ROT_SPEED 0.08
+# define MOVE_SPEED 0.05
+# define ROT_SPEED 0.05
 # define PLAYER_RADIUS 0.2
-# define MOUSE_SENSI 0.005
+# define MOUSE_SENSI 0.0001
 # define TEX_N 0
 # define TEX_S 1
 # define TEX_E 2
@@ -70,32 +70,32 @@
 /* ─── Structures ─────────────────────────────────────────────── */
 typedef struct s_mmap
 {
-	int		size;
-	int		cell_size;
-	int		wall_color;
-	int		floor_color;
-	int		player_color;
-	int		border_size;
-	int		border_color;
-	int		player_size;
-	int		dir_length;
-	double	center_x;
-	double	center_y;
-	double	dir_end_x;
-	double	dir_end_y;
-	int		visible_cells;
-	int		map_x;
-	int		map_y;
-	int		cell_x;
-	int		cell_y;
-	int		dx;
-	int		dy;
-	int		sx;
-	int		sy;
-	int		err;
-	int		e2;
-	int		x;
-	int		y;
+	int			size;
+	int			cell_size;
+	int			wall_color;
+	int			floor_color;
+	int			player_color;
+	int			border_size;
+	int			border_color;
+	int			player_size;
+	int			dir_length;
+	double		center_x;
+	double		center_y;
+	double		dir_end_x;
+	double		dir_end_y;
+	int			visible_cells;
+	int			map_x;
+	int			map_y;
+	int			cell_x;
+	int			cell_y;
+	int			dx;
+	int			dy;
+	int			sx;
+	int			sy;
+	int			err;
+	int			e2;
+	int			x;
+	int			y;
 }	t_mmap;
 
 typedef struct s_ray
@@ -227,6 +227,7 @@ void			draw_square(t_img *img, t_mmap *mmap, int color);
 void			draw_line(t_img *img, t_mmap *mmap);
 void			draw_minimap_border(t_img *img, t_mmap *mmap);
 //MOUSE
+void			draw_crosshair(t_game *game);
 int				mouse_rotate(int x, int y, void *param);
 //UTILS
 void			pixel_put(t_game *game, int x, int y, int color);
