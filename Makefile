@@ -29,14 +29,13 @@ SRCS		= ./src/main.c \
 			./src/raycasting/dda.c \
 			./src/raycasting/draw_vertical.c \
 			./src/raycasting/init_raycasting.c \
-			./src/utils/pixel_put.c
-BONUS		= ./src/bonus/minimap_cells.c \
+			./src/utils/pixel_put.c \
+			./src/bonus/minimap_cells.c \
 			./src/bonus/minimap_draw.c \
 			./src/bonus/minimap.c \
 			./src/bonus/mouse_rotate.c
 
 OBJS 		= $(SRCS:.c=.o)
-BONUS_OBJ	= $(BONUS:.c=.o)
 
 .c.o:
 			@$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
@@ -46,10 +45,6 @@ all :		$(LIBFT) $(NAME)
 $(NAME) :	${OBJS} ${LIBFT} 
 			@echo "Building cub3D..."
 			@${CC} ${OBJS} ${LIBFT} $(FLAGS) $(LIBRARY) -o ${NAME}
-
-bonus:		$(LIBFT) $(OBJS) $(BONUS_OBJ)
-			@echo "Building cub3D (with bonus)…"
-			@$(CC) $(OBJS) $(BONUS_OBJ) $(LIBFT) $(FLAGS) $(LIBRARY) -o $(NAME)
 
 $(LIBFT) :
 			@echo "Building libft..."
@@ -67,4 +62,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY : all bonus clean fclean re
+.PHONY : all clean fclean re
