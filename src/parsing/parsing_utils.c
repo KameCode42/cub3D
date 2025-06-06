@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_file_utils.c                                 :+:      :+:    :+:   */
+/*   parsing_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aledos-s <alex>                            #+#  +:+       +#+        */
+/*   By: david <david@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-05-11 11:17:34 by aledos-s          #+#    #+#             */
-/*   Updated: 2025-05-11 11:17:34 by aledos-s         ###   ########.fr       */
+/*   Created: 2025/05/11 11:17:34 by aledos-s          #+#    #+#             */
+/*   Updated: 2025/06/06 09:22:25 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	check_valid_map(t_game *game, char **map_copy)
 	size_t	y;
 
 	if (map_copy[(int)game->player.pos_y][(int)game->player.pos_x] == 'F')
-		return (free_array(map_copy), error_msg("Map not closed"), 1);
+		return (error_msg("Map not closed"), 1);
 	y = 0;
 	while (y < game->map.height)
 	{
@@ -74,7 +74,7 @@ int	check_valid_map(t_game *game, char **map_copy)
 			if (map_copy[y][x] == 'F' && (game->map.grid[y][x] == '0'
 				|| game->map.grid[y][x] == 'N' || game->map.grid[y][x] == 'S'
 				|| game->map.grid[y][x] == 'E' || game->map.grid[y][x] == 'W'))
-				return (free_array(map_copy), error_msg("Map not closed"), 1);
+				return (error_msg("Map not closed"), 1);
 			x++;
 		}
 		y++;

@@ -6,7 +6,7 @@
 /*   By: david <david@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 12:51:08 by aledos-s          #+#    #+#             */
-/*   Updated: 2025/05/30 11:38:57 by david            ###   ########.fr       */
+/*   Updated: 2025/06/06 09:21:09 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,16 @@ int	main(int argc, char **argv)
 	t_game	game;
 
 	if (argc != 2)
-		return (error_msg("Usage: ./cub3D <map_file.cub>\n"), 1);
+		return (error_msg("Usage: ./cub3D <map_file.cub>"), 1);
 	printf("Starting parsing for file: %s\n", argv[1]);
 	if (init_game(&game, argv[1]))
 	{
-		error_msg("Error: Failed to initialize game\n");
+		error_msg("Failed to initialize game");
+		quit_game(&game);
 		return (1);
 	}
 	if (parse_texture(&game) || load_textures(&game))
-		return (error_msg("Error loading textures\n"), 1);
+		return (error_msg("Loading textures"), quit_game(&game), 1);
 	init_player(&game);
 	game.img.img_ptr = mlx_new_image(game.mlx, WIN_WIDTH, WIN_HEIGHT);
 	game.img.addr = mlx_get_data_addr(game.img.img_ptr,
