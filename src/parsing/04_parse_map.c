@@ -6,7 +6,7 @@
 /*   By: david <david@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 05:56:29 by aledos-s          #+#    #+#             */
-/*   Updated: 2025/06/09 13:44:31 by david            ###   ########.fr       */
+/*   Updated: 2025/06/09 14:15:25 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,7 @@ int	parse_map(t_game *game)
 		return (1);
 	if (flood_fill_map(game))
 		return (1);
-	replace_spaces_with_walls(game->map.grid, game->map.height, game->map.width);
+	replace_spaces_with_walls(game->map.grid,
+		game->map.height, game->map.width);
 	return (0);
 }

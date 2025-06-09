@@ -6,7 +6,7 @@
 /*   By: david <david@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 14:23:16 by aledos-s          #+#    #+#             */
-/*   Updated: 2025/06/09 13:51:15 by david            ###   ########.fr       */
+/*   Updated: 2025/06/09 14:04:55 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	check_end_line(t_game *game)
 {
 	int	i;
 
-	if (!game || !game->map.grid || !game->texture_paths)
+	if (!game || !game->map.grid)
 		return (error_msg("Invalid game structure"), 1);
 	i = 0;
 	while (game->map.grid[i])
