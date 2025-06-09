@@ -52,6 +52,8 @@ int	check_end_line(t_game *game)
 {
 	int	i;
 
+	if (!game || !game->map.grid || !game->texture_paths)
+		return (error_msg("Invalid game structure"), 1);
 	i = 0;
 	while (game->map.grid[i])
 	{

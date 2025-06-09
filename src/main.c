@@ -31,7 +31,6 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 		return (error_msg("Usage: ./cub3D <map_file.cub>"), 1);
-	printf("Starting parsing for file: %s\n", argv[1]);
 	if (init_game(&game, argv[1]))
 	{
 		error_msg("Failed to initialize game");

@@ -1,65 +1,86 @@
+# === Variables de configuration ===
 NAME		= cub3D
-LIBFT		= ./lib/libft/libft.a
-MLX_DIR		= ./lib/mlx
-LIBRARY		= -L$(MLX_DIR) -lmlx -lX11 -lXext -lm
-
-LIBC		= ar rcs
-CC			= gcc
+CC			= cc
+CFLAGS		= -Wall -Wextra -Werror -g
 RM			= rm -f
 
-FLAGS		= -Wall -Wextra -Werror -Iinc
+SRC_DIR		= src
+OBJ_DIR		= obj
+INC_DIR		= inc
+LIB_DIR		= lib
+MLX_DIR		= $(LIB_DIR)/mlx
+LIBFT_DIR	= $(LIB_DIR)/libft
 
-SRCS		= ./src/main.c \
-			./src/exit/exit.c \
-			./src/exit/free.c \
-			./src/parsing/00_init_game.c \
-			./src/parsing/01_parse_game.c \
-			./src/parsing/02_parse_file.c \
-			./src/parsing/03_parse_graphics.c \
-			./src/parsing/04_parse_map.c \
-			./src/parsing/05_flood_fill_map.c \
-			./src/parsing/06_load_textures.c \
-			./src/parsing/parsing_utils.c \
-			./src/parsing/parsing_utils2.c \
-			./src/hooks/key_hooks.c \
-			./src/player/controls_player.c \
-			./src/player/init_player.c \
-			./src/player/move_player.c \
-			./src/player/rotate_player.c \
-			./src/raycasting/dda.c \
-			./src/raycasting/draw_vertical.c \
-			./src/raycasting/init_raycasting.c \
-			./src/utils/pixel_put.c \
-			./src/bonus/minimap_cells.c \
-			./src/bonus/minimap_draw.c \
-			./src/bonus/minimap.c \
-			./src/bonus/mouse_rotate.c
+MLX			= $(MLX_DIR)/libmlx.a
+LIBFT		= $(LIBFT_DIR)/libft.a
 
-OBJS 		= $(SRCS:.c=.o)
+MLX_FLAGS	= -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
+LIBFT_FLAGS	= -L$(LIBFT_DIR) -lft
 
-.c.o:
-			@$(CC) $(FLAGS) -c $< -o $(<:.c=.o)
+# === Fichiers sources ===
+SRC_FILES = \
+	main.c \
+	exit/exit.c \
+	exit/free.c \
+	parsing/00_init_game.c \
+	parsing/01_parse_game.c \
+	parsing/02_parse_file.c \
+	parsing/03_parse_graphics.c \
+	parsing/04_parse_map.c \
+	parsing/05_flood_fill_map.c \
+	parsing/06_load_textures.c \
+	parsing/parsing_utils.c \
+	parsing/parsing_utils2.c \
+	hooks/key_hooks.c \
+	player/controls_player.c \
+	player/init_player.c \
+	player/move_player.c \
+	player/rotate_player.c \
+	raycasting/dda.c \
+	raycasting/draw_vertical.c \
+	raycasting/init_raycasting.c \
+	utils/pixel_put.c \
+	bonus/minimap_cells.c \
+	bonus/minimap_draw.c \
+	bonus/minimap.c \
+	bonus/mouse_rotate.c \
 
-all :		$(LIBFT) $(NAME)
+SRCS = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
 
-$(NAME) :	${OBJS} ${LIBFT} 
-			@echo "Building cub3D..."
-			@${CC} ${OBJS} ${LIBFT} $(FLAGS) $(LIBRARY) -o ${NAME}
+# === Compilation des objets ===
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -I$(INC_DIR) -I$(MLX_DIR) -I$(LIBFT_DIR) -c $< -o $@
 
-$(LIBFT) :
-			@echo "Building libft..."
-			@make -C lib/libft > /dev/null 2>&1
+# === Règle principale ===
+$(NAME): $(MLX) $(LIBFT) $(OBJS)
+	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(LIBFT_FLAGS) $(MLX_FLAGS)
+	@echo "\n✅ Compilation terminée : $(NAME)\n"
+
+# === Compilation des libs ===
+$(MLX):
+	@echo "\n📦 Compilation de la bibliothèque MLX..."
+	@make -s -C $(MLX_DIR) > /dev/null 2>&1
+
+$(LIBFT):
+	@echo "\n📦 Compilation de la bibliothèque LIBFT..."
+	@make -s -C $(LIBFT_DIR) > /dev/null 2>&1
+
+# === Règles standard ===
+all: $(NAME)
 
 clean:
-			@echo "Cleaning..."
-			@rm -f $(OBJS) $(BONUS_OBJ)
-			@make clean -C lib/libft > /dev/null 2>&1
+	@echo "\n🧹 Suppression des fichiers objets..."
+	@$(RM) -r $(OBJ_DIR)
+	@make -s -C $(MLX_DIR) clean > /dev/null 2>&1
+	@make -s -C $(LIBFT_DIR) clean > /dev/null 2>&1
 
-fclean:		clean
-			@echo "Cleaning all..."
-			@rm -f $(NAME)
-			@make fclean -C lib/libft > /dev/null 2>&1
+fclean: clean
+	@echo "\n🧹 Suppression complète...\n"
+	@$(RM) $(NAME)
+	@make -s -C $(LIBFT_DIR) fclean > /dev/null 2>&1
 
-re:			fclean all
+re: fclean all
 
-.PHONY : all clean fclean re
+.PHONY: all clean fclean re
