@@ -12,6 +12,20 @@
 
 #include "cub3d.h"
 
+static int	check_file_valid(const char *filepath)
+{
+	int	fd;
+
+	fd = open(filepath, O_RDONLY);
+	if (fd < 0)
+	{
+		perror(filepath);
+		return (1);
+	}
+	close(fd);
+	return (0);
+}
+
 static int	convert_rgb_values(char *str, int *i)
 {
 	char	**split;
@@ -59,14 +73,18 @@ int	parse_color(char *color)
 
 int	parse_texture(t_game *game)
 {
-	if (check_extension(game->texture_paths[0], ".xpm"))
-		return (1);
-	if (check_extension(game->texture_paths[1], ".xpm"))
-		return (1);
-	if (check_extension(game->texture_paths[2], ".xpm"))
-		return (1);
-	if (check_extension(game->texture_paths[3], ".xpm"))
-		return (1);
+	if (check_extension(game->texture_paths[0], ".xpm")
+		|| check_file_valid(game->texture_paths[0]))
+		return (error_msg("Invalid or missing texture file (NO)"), 1);
+	if (check_extension(game->texture_paths[1], ".xpm")
+		|| check_file_valid(game->texture_paths[1]))
+		return (error_msg("Invalid or missing texture file (SO)"), 1);
+	if (check_extension(game->texture_paths[2], ".xpm")
+		|| check_file_valid(game->texture_paths[2]))
+		return (error_msg("Invalid or missing texture file (WE)"), 1);
+	if (check_extension(game->texture_paths[3], ".xpm")
+		|| check_file_valid(game->texture_paths[3]))
+		return (error_msg("Invalid or missing texture file (EA)"), 1);
 	if (game->floor_color < 0 || game->floor_color > 16777215)
 		return (error_msg("Invalid floor color"), 1);
 	if (game->ceiling_color < 0 || game->ceiling_color > 16777215)
