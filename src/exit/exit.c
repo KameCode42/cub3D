@@ -28,6 +28,7 @@ static void	exit_mlx(t_game *game)
 			mlx_destroy_image(game->mlx, game->img.img_ptr);
 		if (game->win)
 			mlx_destroy_window(game->mlx, game->win);
+		mlx_loop_end(game->mlx);
 		mlx_destroy_display(game->mlx);
 		free(game->mlx);
 	}

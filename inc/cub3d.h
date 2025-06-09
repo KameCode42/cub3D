@@ -21,6 +21,7 @@
 # include <stdbool.h>
 # include <X11/keysym.h>
 # include <X11/X.h>
+# include <X11/Xlib.h>
 # include "../lib/mlx/mlx.h"
 # include "../lib/libft/libft.h"
 

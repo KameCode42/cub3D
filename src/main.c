@@ -33,7 +33,7 @@ int	main(int argc, char **argv)
 		return (error_msg("Usage: ./cub3D <map_file.cub>"), 1);
 	if (init_game(&game, argv[1]))
 	{
-		error_msg("Failed to initialize game");
+		error_msg("Failed to initialize game. Exiting...");
 		quit_game(&game);
 		return (1);
 	}
