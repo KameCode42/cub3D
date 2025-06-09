@@ -6,7 +6,7 @@
 /*   By: david <david@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/09 05:56:29 by aledos-s          #+#    #+#             */
-/*   Updated: 2025/05/25 11:34:39 by david            ###   ########.fr       */
+/*   Updated: 2025/06/09 13:44:31 by david            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ static int	check_valid_chars(t_game *game)
 			if (!is_valid_char(game->map.grid[i][j]))
 				return (error_msg("Invalid character in map"), 1);
 			if (is_start(game->map.grid[i][j]))
+			{
+				set_player(game, i, j);
 				player_count++;
+			}
 			j++;
 		}
 		i++;
@@ -78,7 +81,6 @@ static int	make_map_rectangular(t_game *game)
 	new_map = dup_map(game->map.grid, game->map.height, game->map.width);
 	if (!new_map)
 		return (perror("Failed to allocate memory for rectangular map"), 1);
-	replace_spaces_with_walls(new_map, game->map.height, game->map.width);
 	free_array(game->map.grid);
 	game->map.grid = new_map;
 	return (check_valid_map(game, new_map));
@@ -90,11 +92,12 @@ int	parse_map(t_game *game)
 		return (1);
 	if (check_empty_lines(game))
 		return (1);
-	if (check_valid_chars(game))
-		return (1);
 	if (make_map_rectangular(game))
+		return (1);
+	if (check_valid_chars(game))
 		return (1);
 	if (flood_fill_map(game))
 		return (1);
+	replace_spaces_with_walls(game->map.grid, game->map.height, game->map.width);
 	return (0);
 }
