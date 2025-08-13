@@ -13,7 +13,7 @@ Il permet de se déplacer dans un labyrinthe en première personne, de détecter
 - Lire et interpréter une carte décrite dans un fichier .cub.
 
 # Structure du projet :
-1. Fichier .cub
+1. Fichier .cub :
 Contient :
 - Les chemins vers les textures des murs (NO, SO, WE, EA).
 - La couleur du plafond et du sol (RGB).
@@ -36,22 +36,22 @@ C 135,206,235 → couleur plafond <br>
 - 0 → espace vide
 - N, S, E, W → position et orientation initiale du joueur
 
-2. Parsing de la carte
+2. Parsing de la carte :
 - Charger les textures.
 - Convertir les couleurs en format utilisable (0xRRGGBB).
 - Stocker les données dans une structure.
 
-3. Initialisation graphique
+3. Initialisation graphique :
 - Ouverture d’une fenêtre avec MiniLibX.
 - Chargement des textures.
 - Placement du joueur dans le monde.
 
-4. Boucle de jeu
+4. Boucle de jeu :
 - Raycasting : pour chaque colonne de l’écran, envoyer un rayon et calculer la distance jusqu’au premier mur touché.
 - Projection : convertir la distance en hauteur de mur à afficher.
 - Rendu : afficher les murs avec la texture correspondante.
 
-5. Contrôles
+5. Contrôles :
 - Avancer / Reculer : W / S
 - Tourner à gauche / droite : ← / →
 - Strafe gauche / droite : A / D
