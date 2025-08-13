@@ -80,4 +80,4 @@ Plus la dist est petite (proche), plus la hauteur du mur est grand
 Tous part du centre (oeil du player), remonte la moitie de l'ecran ou descend pour dessiner le mur
 Dessine plafond, mur, sol
 
-# 
+# Compilation et exécution :
