@@ -19,10 +19,10 @@ Contient :
 - La couleur du plafond et du sol (RGB).
 - La carte en ASCII avec :
 
-NO ./textures/no.xpm
-SO ./textures/so.xpm
-WE ./textures/we.xpm
-EA ./textures/ea.xpm
+NO ./textures/no.xpm <br>
+SO ./textures/so.xpm <br>
+WE ./textures/we.xpm <br>
+EA ./textures/ea.xpm <br>
 
 F 101,67,33 → couleur sol
 C 135,206,235 → couleur plafond
