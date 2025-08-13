@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: david <david@student.42.fr>                +#+  +:+       +#+        */
+/*   By: dle-fur <dle-fur@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 12:42:57 by aledos-s          #+#    #+#             */
-/*   Updated: 2025/05/30 13:24:27 by david            ###   ########.fr       */
+/*   Updated: 2025/08/13 19:21:06 by dle-fur          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 
 /* ─── Defines ───────────────────────────────────────────────── */
 # define WIN_TITLE "CUB3D"
-# define WIN_WIDTH 2500
-# define WIN_HEIGHT 1200
+# define WIN_WIDTH 720
+# define WIN_HEIGHT 480
 # define CELL_WALL '1'
 # define CELL_EMPTY '0'
 # define START_N 'N'
