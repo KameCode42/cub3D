@@ -24,13 +24,13 @@ SO ./textures/so.xpm <br>
 WE ./textures/we.xpm <br>
 EA ./textures/ea.xpm <br>
 
-F 101,67,33 → couleur sol
-C 135,206,235 → couleur plafond
+F 101,67,33 → couleur sol <br>
+C 135,206,235 → couleur plafond <br>
 
-111111
-100001
-1000N1
-111111
+111111 <br>
+100001 <br>
+1000N1 <br>
+111111 <br>
 
 - 1 → mur
 - 0 → espace vide
