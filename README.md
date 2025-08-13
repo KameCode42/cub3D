@@ -63,21 +63,21 @@ Plutôt que de modéliser tout un monde 3D, on envoie des rayons depuis la posit
 Cette méthode est rapide et idéale pour des jeux à la Wolfenstein 3D.
 
 pixel_put :
-Donne le pouvoir de tracer la moindre particule de ton monde
-c'est la fondation ensuite -> ray-casting, textures, sprites, mini-map — se fait par-dessus ce mécanisme
+- Donne le pouvoir de tracer la moindre particule de ton monde
+- c'est la fondation ensuite -> ray-casting, textures, sprites, mini-map — se fait par-dessus ce mécanisme
 
 DDA :
-DDA (Digital Differential Analyzer) est l’algorithme de ray‐casting utilisé dans Cub3D pour détecter à partir de la position du joueur
+- DDA (Digital Differential Analyzer) est l’algorithme de ray‐casting utilisé dans Cub3D pour détecter à partir de la position du joueur
 où un rayon frappe un mur sur une carte en grille 2D.
-Dès qu’on entre dans une case « mur », on sait où s’est produit l’impact
+- Dès qu’on entre dans une case « mur », on sait où s’est produit l’impact
 
 Draw_vertical :
-Texture a afficher selon l'orientation du player
-Coordonnee pour les bandes verticale a l'ecran
-Defini la hauteur du mur
-Draw_start et end permet de definir la texture du mur
-Plus la dist est petite (proche), plus la hauteur du mur est grand
-Tous part du centre (oeil du player), remonte la moitie de l'ecran ou descend pour dessiner le mur
-Dessine plafond, mur, sol
+- Texture a afficher selon l'orientation du player
+- Coordonnee pour les bandes verticale a l'ecran
+- Defini la hauteur du mur
+- Draw_start et end permet de definir la texture du mur
+- Plus la dist est petite (proche), plus la hauteur du mur est grand
+- Tous part du centre (oeil du player), remonte la moitie de l'ecran ou descend pour dessiner le mur
+- Dessine plafond, mur, sol
 
 # Compilation et exécution :
