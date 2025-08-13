@@ -36,7 +36,7 @@ C 135,206,235 → couleur plafond <br>
 - 0 → espace vide
 - N, S, E, W → position et orientation initiale du joueur
 
-2. Parsing de la carte :
+2. Parsing de la carte : <br>
 - Charger les textures.
 - Convertir les couleurs en format utilisable (0xRRGGBB).
 - Stocker les données dans une structure.
