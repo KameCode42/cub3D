@@ -40,17 +40,17 @@ C 225,30,0 <br>
 - Convertir les couleurs en format utilisable (0xRRGGBB).
 - Stocker les données dans une structure.
 
-3️. Initialisation graphique
+3️. Initialisation graphique :
 - Ouverture d’une fenêtre avec MiniLibX.
 - Chargement des textures.
 - Placement du joueur dans le monde.
 
-4️. Boucle de jeu
+4️. Boucle de jeu :
 - Raycasting : pour chaque colonne de l’écran, envoyer un rayon et calculer la distance jusqu’au premier mur touché.
 - Projection : convertir la distance en hauteur de mur à afficher.
 - Rendu : afficher les murs avec la texture correspondante.
 
-5️. Contrôles
+5️. Contrôles :
 - Avancer / Reculer : W / S
 - Tourner à gauche / droite : ← / →
 - Strafe gauche / droite : A / D
@@ -61,27 +61,27 @@ C 225,30,0 <br>
 - Chaque rayon calcule la première collision avec un mur.
 - La hauteur du mur affiché dépend de la distance du rayon.
 
-Étapes du raycasting
-1. Position et orientation du joueur (Le joueur est placé sur la carte 2D avec)
+Étapes du raycasting :
+1. Position et orientation du joueur (Le joueur est placé sur la carte 2D avec) :
 - Une position (x, y)
 - Une direction (angle ou vecteur)
 - Un FOV (Field of View, champ de vision), généralement ~60°
 
-2️. Envoi des rayons (Pour chaque colonne de pixels à l’écran)
+2️. Envoi des rayons (Pour chaque colonne de pixels à l’écran) :
 - On calcule l’angle correspondant dans le champ de vision.
 - On envoie un rayon dans cette direction.
 
-3️. Détection des collisions
+3️. Détection des collisions :
 - On avance le rayon étape par étape jusqu’à toucher un mur (1 dans la carte).
 - Plus la distance est courte → plus le mur est grand à l’écran.
 - Plus la distance est longue → plus le mur est petit.
 
-4️. Projection à l’écran (Avec la distance trouvée)
+4️. Projection à l’écran (Avec la distance trouvée) :
 - On calcule la hauteur de la ligne à afficher.
 - On choisit la texture en fonction de la face du mur touchée (Nord, Sud, Est, Ouest).
 - On dessine cette ligne à la bonne position verticale.
 
-5️. Correction de la distorsion (Fish-eye)
+5️. Correction de la distorsion (Fish-eye) :
 - Les rayons aux extrémités du champ de vision semblent plus longs.
 - On corrige ça en projetant la distance sur la direction réelle du joueur.
 
