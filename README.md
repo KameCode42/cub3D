@@ -60,11 +60,14 @@ C 225,30,0 <br>
 - Strafe gauche / droite : A / D
 - Quitter : ESC ou fermer la fenêtre
 
-# Concepts clés :
-Raycasting
+# Raycasting :
 - Simule un champ de vision.
 - Chaque rayon calcule la première collision avec un mur.
 - La hauteur du mur affiché dépend de la distance du rayon.
+
+Étapes du raycasting dans Cub3D
+
+
 
 
 
