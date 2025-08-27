@@ -21,12 +21,12 @@ Il permet de se déplacer dans un labyrinthe en première personne, de détecter
 - N, S, E, W → position et orientation initiale du joueur
 
 Exemple de carte :
-NO ./textures/north.xpm
-SO ./textures/south.xpm
-WE ./textures/west.xpm
-EA ./textures/east.xpm
-F 220,100,0
-C 225,30,0
+NO ./textures/north.xpm <br>
+SO ./textures/south.xpm <br>
+WE ./textures/west.xpm <br>
+EA ./textures/east.xpm <br>
+F 220,100,0 <br>
+C 225,30,0 <br>
 
 111111 <br>
 100001 <br>
