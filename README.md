@@ -86,3 +86,5 @@ C 225,30,0 <br>
 - On corrige ça en projetant la distance sur la direction réelle du joueur.
 
 # Compilation et exécution :
+<img width="417" height="149" alt="Image" src="https://github.com/user-attachments/assets/fac411b5-3c39-454b-b70a-3ac9007b959d" />
+<br>
