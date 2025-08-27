@@ -20,7 +20,7 @@ Il permet de se déplacer dans un labyrinthe en première personne, de détecter
 - 0 → espace vide
 - N, S, E, W → position et orientation initiale du joueur
 
-Exemple de carte :
+Exemple de carte : <br>
 NO ./textures/north.xpm <br>
 SO ./textures/south.xpm <br>
 WE ./textures/west.xpm <br>
