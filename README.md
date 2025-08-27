@@ -10,3 +10,18 @@ Il permet de se déplacer dans un labyrinthe en première personne, de détecter
 - Apprendre à utiliser la MiniLibX pour l’affichage graphique.
 - Gérer les événements clavier pour déplacer le joueur et tourner la caméra.
 - Lire et interpréter une carte décrite dans un fichier .cub.
+
+# Structure du projet :
+1️. Fichier .cub
+- Les chemins vers les textures des murs (NO, SO, WE, EA).
+- La couleur du plafond et du sol (RGB).
+- La carte en ASCII avec :
+
+111111
+100001
+1000N1
+111111
+  
+- 1 → mur
+- 0 → espace vide
+- N, S, E, W → position et orientation initiale du joueur
