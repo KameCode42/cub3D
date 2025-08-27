@@ -33,3 +33,7 @@ C 225,30,0 <br>
 100001 <br>
 1000N1 <br>
 111111 <br>
+
+- 1 → mur
+- 0 → espace vide
+- N, S, E, W → position et orientation initiale du joueur
