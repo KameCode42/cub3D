@@ -62,14 +62,12 @@ C 225,30,0 <br>
 - La hauteur du mur affiché dépend de la distance du rayon.
 
 Étapes du raycasting
-1. Position et orientation du joueur
-- Le joueur est placé sur la carte 2D avec :
+1. Position et orientation du joueur (Le joueur est placé sur la carte 2D avec)
 - Une position (x, y)
 - Une direction (angle ou vecteur)
 - Un FOV (Field of View, champ de vision), généralement ~60°
 
-2️. Envoi des rayons
-- Pour chaque colonne de pixels à l’écran :
+2️. Envoi des rayons (Pour chaque colonne de pixels à l’écran)
 - On calcule l’angle correspondant dans le champ de vision.
 - On envoie un rayon dans cette direction.
 
