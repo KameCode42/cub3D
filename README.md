@@ -34,10 +34,6 @@ C 225,30,0 <br>
 1000N1 <br>
 111111 <br>
 
-- 1 → mur
-- 0 → espace vide
-- N, S, E, W → position et orientation initiale du joueur
-
 2️. Parsing de la carte
 - Vérifier que la carte est fermée (pas de trous).
 - Charger les textures.
