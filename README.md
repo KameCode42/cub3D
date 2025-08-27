@@ -6,3 +6,7 @@ L’objectif est de créer un moteur 3D minimaliste en C en utilisant la techniq
 Il permet de se déplacer dans un labyrinthe en première personne, de détecter les collisions et d’afficher un environnement en pseudo-3D. <br>
 
 # Objectif du projet :
+- Comprendre le raycasting (projection 3D à partir d’un plan 2D).
+- Apprendre à utiliser la MiniLibX pour l’affichage graphique.
+- Gérer les événements clavier pour déplacer le joueur et tourner la caméra.
+- Lire et interpréter une carte décrite dans un fichier .cub.
