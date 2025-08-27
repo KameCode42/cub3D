@@ -34,8 +34,7 @@ C 225,30,0 <br>
 1000N1 <br>
 111111 <br>
 
-2️. Parsing de la carte
-- Vérifier que la carte est fermée (pas de trous).
+2️. Parsing de la carte - Vérifier que la carte est fermée (pas de trous).
 - Charger les textures.
 - Convertir les couleurs en format utilisable (0xRRGGBB).
 - Stocker les données dans une structure.
