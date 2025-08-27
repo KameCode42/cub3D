@@ -37,3 +37,34 @@ C 225,30,0 <br>
 - 1 → mur
 - 0 → espace vide
 - N, S, E, W → position et orientation initiale du joueur
+
+2️. Parsing de la carte
+- Vérifier que la carte est fermée (pas de trous).
+- Charger les textures.
+- Convertir les couleurs en format utilisable (0xRRGGBB).
+- Stocker les données dans une structure.
+
+3️. Initialisation graphique
+- Ouverture d’une fenêtre avec MiniLibX.
+- Chargement des textures.
+- Placement du joueur dans le monde.
+
+4️. Boucle de jeu
+- Raycasting : pour chaque colonne de l’écran, envoyer un rayon et calculer la distance jusqu’au premier mur touché.
+- Projection : convertir la distance en hauteur de mur à afficher.
+- Rendu : afficher les murs avec la texture correspondante.
+
+5️. Contrôles
+- Avancer / Reculer : W / S
+- Tourner à gauche / droite : ← / →
+- Strafe gauche / droite : A / D
+- Quitter : ESC ou fermer la fenêtre
+
+# Concepts clés :
+
+
+
+
+
+
+
