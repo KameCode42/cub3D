@@ -88,3 +88,4 @@ C 225,30,0 <br>
 # Compilation et exécution :
 <img width="417" height="149" alt="Image" src="https://github.com/user-attachments/assets/fac411b5-3c39-454b-b70a-3ac9007b959d" />
 <br>
+<img width="717" height="521" alt="Image" src="https://github.com/user-attachments/assets/ae921e02-d11b-4970-84a4-a10f3189b99a" />
