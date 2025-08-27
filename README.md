@@ -61,6 +61,10 @@ C 225,30,0 <br>
 - Quitter : ESC ou fermer la fenêtre
 
 # Concepts clés :
+Raycasting
+- Simule un champ de vision.
+- Chaque rayon calcule la première collision avec un mur.
+- La hauteur du mur affiché dépend de la distance du rayon.
 
 
 
