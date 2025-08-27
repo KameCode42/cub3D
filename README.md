@@ -15,13 +15,20 @@ Il permet de se déplacer dans un labyrinthe en première personne, de détecter
 1️. Fichier .cub
 - Les chemins vers les textures des murs (NO, SO, WE, EA).
 - La couleur du plafond et du sol (RGB).
-- La carte en ASCII avec :
+- La carte en ASCII :
+- 1 → mur
+- 0 → espace vide
+- N, S, E, W → position et orientation initiale du joueur
+
+Exemple de carte :
+NO ./textures/north.xpm
+SO ./textures/south.xpm
+WE ./textures/west.xpm
+EA ./textures/east.xpm
+F 220,100,0
+C 225,30,0
 
 111111 <br>
 100001 <br>
 1000N1 <br>
 111111 <br>
-  
-- 1 → mur
-- 0 → espace vide
-- N, S, E, W → position et orientation initiale du joueur
