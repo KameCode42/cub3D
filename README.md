@@ -1,5 +1,3 @@
-<img width="720" height="450" alt="Image" src="https://github.com/user-attachments/assets/459b0615-9cab-49eb-9d78-39ee16922e7d" />
-
 # Sujet :
 Cub3D est un projet inspiré du jeu Wolfenstein 3D. <br>
 L’objectif est de créer un moteur 3D minimaliste en C en utilisant la technique du raycasting. <br>
